@@ -174,7 +174,7 @@ public class MainActivity extends AppCompatActivity {
         counter = ++counter % LIST.length;
         Log.d(TAG, "" + counter);
         textView.setText(LIST[counter]);
-    }    
+    }
 
 
     public void last(View view){
@@ -191,7 +191,7 @@ public class MainActivity extends AppCompatActivity {
             textView.setText(LIST[counter]);
         } catch (Exception e){
             Toast.makeText(this, "Ingresa un número entero positivo" , Toast.LENGTH_SHORT).show();
-            Log.d(TAG, "Invalid input");
+            Log.d(TAG, "Invalid input" + editText.getText().toString());
         }
 
     }
