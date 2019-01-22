@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText editText;
     private int counter;
 
-    private static final String TAG = "Chévere";
+    private static final String TAG = "Main Activity";
     private static final String[] LIST = {
             "Somos lo que pensamos. Todo lo que somos surge con nuestros pensamientos. Con nuestros pensamientos construimos el mundo.-Buddha.",
             "El pesimista ve dificultad en toda oportunidad. El optimista ve oportunidad en toda dificultad.-Winston Churchill.",
@@ -161,7 +161,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-        editText = (EditText) findViewById(R.id.editText);
+        editText = findViewById(R.id.editText);
         Log.d(TAG, "Holi");
         counter = 0;
     }
@@ -170,11 +170,11 @@ public class MainActivity extends AppCompatActivity {
         textView.setText(LIST[counter]);
 
     }
-    public void next(View view){
+    public void next(View view) {
         counter = ++counter % LIST.length;
-        Log.d(TAG, ""+counter);
+        Log.d(TAG, "" + counter);
         textView.setText(LIST[counter]);
-    }
+    }    
 
 
     public void last(View view){
@@ -186,11 +186,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void go(View view){
         try {
-            counter = Integer.parseInt(editText.getText().toString());
-            Log.d(TAG, "Mensaje " + counter);
+            counter = Integer.parseInt(editText.getText().toString()) % LIST.length;
+            Log.d(TAG, "Message " + counter);
             textView.setText(LIST[counter]);
         } catch (Exception e){
-            Toast.makeText(this, "Ingresa un número positivo" , Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Ingresa un número entero positivo" , Toast.LENGTH_SHORT).show();
             Log.d(TAG, "Invalid input");
         }
 
