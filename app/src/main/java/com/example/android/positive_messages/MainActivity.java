@@ -186,11 +186,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void go(View view){
         try {
-            counter = Integer.parseInt(editText.getText().toString()) % LIST.length;
+            counter = Integer.parseInt(editText.getText().toString());
             Log.d(TAG, "Message " + counter);
             textView.setText(LIST[counter]);
         } catch (Exception e){
-            Toast.makeText(this, "Ingresa un número entero positivo" , Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "No se pudo encontrar ese mensaje." , Toast.LENGTH_SHORT).show();
             Log.d(TAG, "Invalid input" + editText.getText().toString());
         }
 
